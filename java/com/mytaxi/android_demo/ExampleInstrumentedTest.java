@@ -1,11 +1,11 @@
-package com.mytaxi.android_demo;
+package com.xxxxxx.android_demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.matcher.RootMatchers;
 import android.support.test.rule.ActivityTestRule;
 
-import com.mytaxi.android_demo.activities.AuthenticationActivity;
+import com.xxxxxx.android_demo.activities.AuthenticationActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -33,8 +33,8 @@ public class ExampleInstrumentedTest {
         assertEquals ( "com.mytaxi.android_demo", appContext.getPackageName () );
 
         //Login valid credentials entered
-        onView ( withId ( R.id.edt_username ) ).perform ( replaceText ( "whiteelephant261" ) );
-        onView ( withId ( R.id.edt_password ) ).perform ( replaceText ( "video" ) );
+        onView ( withId ( R.id.edt_username ) ).perform ( replaceText ( "username" ) );
+        onView ( withId ( R.id.edt_password ) ).perform ( replaceText ( "pw" ) );
 
         //Validate Login button showing up and successfully clicked on
         onView ( withId ( R.id.btn_login ) ).check ( matches ( withText ( "Login" ) ) );
@@ -43,6 +43,6 @@ public class ExampleInstrumentedTest {
 
         //Select valid Driver from Search List
         onView ( withId ( R.id.textSearch ) ).perform ( replaceText ( "Sara" ) );
-        onView ( withText ( "Sarah Friedrich" ) ).inRoot ( RootMatchers.isPlatformPopup () ).perform ( click () );
+        onView ( withText ( "Sarah F...." ) ).inRoot ( RootMatchers.isPlatformPopup () ).perform ( click () );
     }
 }
